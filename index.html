@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ronald Quintin - IT Student & Developer</title>
 <meta name="description" content="Ronald Quintin is a fourth-year BSIT student in Camarines Norte, Philippines, building web systems, Android apps, and embedded projects.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ronald Quintin | Web, Mobile &amp; Embedded Projects">
+<meta property="og:description" content="Explore my work in full stack web development, Android apps, and embedded systems, including UCN Market Hub and PRINTABLES.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ronald Quintin | Developer Portfolio">
+<meta name="twitter:description" content="Web systems, Android apps, and embedded projects by Ronald Quintin.">
 <meta name="theme-color" content="#050914">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23050914'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='28' font-weight='700' text-anchor='middle' fill='%2336e6ff'%3ERQ%3C/text%3E%3C/svg%3E">
 
@@ -152,7 +158,7 @@ html.booting #boot { display: grid; }
 #boot-log div { opacity: 0; transform: translateY(6px); animation: bootline .3s forwards; }
 #boot-log b { color: var(--ok); font-weight: 600; }
 .boot-bar { height: 2px; margin-top: 18px; border-radius: 2px; overflow: hidden; background: var(--line); }
-.boot-bar i { display: block; height: 100%; width: 0; background: var(--acc); box-shadow: 0 0 12px var(--acc); transition: width 1.5s cubic-bezier(.3, .7, .2, 1); }
+.boot-bar i { display: block; height: 100%; width: 0; background: var(--acc); box-shadow: 0 0 12px var(--acc); transition: width .9s cubic-bezier(.3, .7, .2, 1); }
 .boot-hint { margin-top: 14px; font-size: .72rem; color: var(--muted); opacity: .7; }
 @keyframes bootline { to { opacity: 1; transform: none; } }
 
@@ -290,12 +296,12 @@ html.dark .theme-btn .i-moon { display: none; }
 .dock-wrap.menu-open #mobile-menu a.m-link { opacity: 1; transform: none; transition-delay: calc(var(--i) * 55ms + 80ms); }
 #mobile-menu .btn { width: 100%; margin-top: 8px; }
 
-@media (min-width: 880px) {
+@media (min-width: 1020px) {
   .links { display: flex; }
   .dock .btn-sm { display: inline-flex; }
   .menu-btn, #mobile-menu { display: none; }
 }
-@media (min-width: 1040px) { .kbd-btn { display: inline-flex; } }
+@media (min-width: 1200px) { .kbd-btn { display: inline-flex; } }
 
 /* ==========================================================================
    HERO
@@ -493,7 +499,19 @@ html.dark .theme-btn .i-moon { display: none; }
 .tag .ic { width: 15px; height: 15px; }
 .info h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.8vw, 2.1rem); letter-spacing: -.03em; line-height: 1.15; }
 .project-date { display: block; font: 600 .82rem var(--font-mono); color: var(--muted); }
-.evt-body .project-date { margin-bottom: 16px; }
+.evt-body .project-meta { margin-bottom: 16px; }
+.project-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.project-status { font-size: .75rem; font-weight: 700; padding: 3px 10px; border: 1px solid var(--line-strong); border-radius: 999px; color: var(--acc); }
+.project-role { font-size: .75rem; font-weight: 600; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+.project-details { width: 100%; border-top: 1px solid var(--line); padding-top: 14px; }
+.project-details summary { cursor: pointer; font-weight: 700; color: var(--acc); }
+.project-details[open] summary { margin-bottom: 14px; }
+.project-details dl { display: grid; gap: 6px; font-size: .9rem; }
+.project-details dt { font-weight: 700; }
+.project-details dd { margin: 0 0 12px; color: var(--muted); }
+.experience-card { display: flex; align-items: flex-start; gap: 24px; }
+.experience-card p { color: var(--muted); max-width: 65ch; margin-top: 12px; }
+@media (max-width: 600px) { .experience-card { flex-direction: column; gap: 12px; } }
 .info p { color: var(--muted); max-width: 52ch; }
 .stack-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .stack-chips li { padding: 4px 13px; border-radius: 999px; font-size: .78rem; font-weight: 700; color: var(--acc); background: rgba(var(--acc-rgb), .09); border: 1px solid rgba(var(--acc-rgb), .22); }
@@ -681,6 +699,7 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
     <nav class="links" aria-label="Primary">
       <span class="ind" aria-hidden="true"></span>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Works</a>
       <a href="#contact">Contact</a>
@@ -704,9 +723,10 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
 
   <div id="mobile-menu" class="panel">
     <a class="m-link" style="--i:0" href="#about">About <svg class="ic"><use href="#i-arrow-right"/></svg></a>
-    <a class="m-link" style="--i:1" href="#skills">Skills <svg class="ic"><use href="#i-arrow-right"/></svg></a>
-    <a class="m-link" style="--i:2" href="#projects">Works <svg class="ic"><use href="#i-arrow-right"/></svg></a>
-    <a class="m-link" style="--i:3" href="#contact">Contact <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+    <a class="m-link" style="--i:1" href="#experience">Experience <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+    <a class="m-link" style="--i:2" href="#skills">Skills <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+    <a class="m-link" style="--i:3" href="#projects">Works <svg class="ic"><use href="#i-arrow-right"/></svg></a>
+    <a class="m-link" style="--i:4" href="#contact">Contact <svg class="ic"><use href="#i-arrow-right"/></svg></a>
     <a class="btn btn-primary m-link-btn" href="#contact">Hire me</a>
   </div>
 </header>
@@ -735,6 +755,7 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
 
       <div class="cta" data-in style="--d:.5s">
         <a href="#projects" class="btn btn-primary btn-lg magnetic">View my projects <svg class="ic ic-go"><use href="#i-arrow-right"/></svg></a>
+        <a href="https://drive.google.com/file/d/1DMyZHJt73CQKT5fLxCTYn0BoNhhdxrqo/view?usp=sharing" class="btn btn-ghost btn-lg magnetic" target="_blank" rel="noopener">View resume <svg class="ic"><use href="#i-file"/></svg></a>
         <a href="#contact" class="btn btn-ghost btn-lg magnetic">Contact me</a>
       </div>
 
@@ -850,6 +871,25 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
   </div>
 </section>
 
+<!-- ======================= EXPERIENCE ======================= -->
+<section id="experience" class="block">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2">Practical experience</h2>
+      <div class="rule"></div>
+    </div>
+    <article class="tile panel spot experience-card" data-reveal="up">
+      <div class="ic-box"><svg class="ic"><use href="#i-wifi"/></svg></div>
+      <div>
+        <small>Internet service provider</small>
+        <h3>ISP technician</h3>
+        <span class="project-date">2025</span>
+        <p>Configured and managed the main internet router for an internet service provider.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- ======================= SKILLS ======================= -->
 <section id="skills" class="block">
   <div class="wrap">
@@ -871,8 +911,12 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <h3>Web &amp; Mobile</h3>
         <ul class="rows">
           <li><svg class="ic"><use href="#i-globe"/></svg>Full Stack Web</li>
+          <li><svg class="ic"><use href="#i-code"/></svg>React &amp; Tailwind CSS</li>
+          <li><svg class="ic"><use href="#i-code"/></svg>Node.js &amp; Express</li>
+          <li><svg class="ic"><use href="#i-database"/></svg>Neon PostgreSQL</li>
           <li><svg class="ic"><use href="#i-smartphone"/></svg>Android Dev</li>
           <li><svg class="ic"><use href="#i-database"/></svg>PHP &amp; MySQL</li>
+          <li><svg class="ic"><use href="#i-globe"/></svg>JWT &amp; PayMongo integration</li>
         </ul>
       </article>
 
@@ -921,15 +965,24 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="shot">
           <div class="browser">
             <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>ucnmarkethub.netlify.app</span></div>
-            <div class="browser-img"><img src="likhaucn.png" loading="lazy" decoding="async" alt="Likha UCN Market Hub screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=Likha+UCN'"></div>
+            <div class="browser-img"><img src="likhaucn.webp" loading="lazy" decoding="async" alt="Likha UCN Market Hub screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=Likha+UCN'"></div>
           </div>
         </div>
         <div class="info">
           <span class="tag"><svg class="ic"><use href="#i-cart"/></svg>E-commerce</span>
           <h3>Likha UCN Market Hub</h3>
-          <span class="project-date">2026</span>
+          <div class="project-meta"><span class="project-date">2026</span><span class="project-status">Live demo</span><span class="project-role">Solo project</span></div>
           <p>A complete marketplace platform featuring Buyer, Seller, and Admin views. Built with a React and Tailwind frontend, and a Node.js and Express backend. Integrates Neon PostgreSQL for database management, JWT for authentication, and PayMongo API for secure checkout flows.</p>
-          <ul class="stack-chips"><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>PayMongo</li></ul>
+          <ul class="stack-chips" aria-label="UCN Market Hub technology stack"><li>React</li><li>Tailwind CSS</li><li>Node.js</li><li>Express</li><li>Neon PostgreSQL</li><li>JWT</li><li>PayMongo API</li></ul>
+          <details class="project-details">
+            <summary>View project details</summary>
+            <dl>
+              <dt>Purpose</dt><dd>Bring product browsing, seller management, and marketplace administration into one platform.</dd>
+              <dt>Frontend</dt><dd>React and Tailwind CSS power the Buyer, Seller, and Admin views.</dd>
+              <dt>Backend and data</dt><dd>Node.js and Express handle the backend, with Neon PostgreSQL for data storage.</dd>
+              <dt>Authentication and checkout</dt><dd>JWT provides authentication, and the PayMongo API supports checkout payments.</dd>
+            </dl>
+          </details>
           <a class="link-go" href="https://ucnmarkethub.netlify.app/" target="_blank" rel="noopener">View live <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
         </div>
       </article>
@@ -939,13 +992,13 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="shot">
           <div class="browser">
             <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>clcb-shop</span></div>
-            <div class="browser-img"><img src="clc-shop.png" loading="lazy" decoding="async" alt="CLCB Shop screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=CLCB+Shop'"></div>
+            <div class="browser-img"><img src="clc-shop.webp" loading="lazy" decoding="async" alt="CLCB Shop screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=CLCB+Shop'"></div>
           </div>
         </div>
         <div class="info">
           <span class="tag"><svg class="ic"><use href="#i-cart"/></svg>E-commerce</span>
           <h3>CLCB Shop</h3>
-          <span class="project-date">Late 2025</span>
+          <div class="project-meta"><span class="project-date">Late 2025</span><span class="project-status">No public demo</span><span class="project-role">Solo project</span></div>
           <p>E-commerce platform for a local business. Built with a custom PHP backend and MySQL database. Includes inventory management, user authentication, and dynamic shopping cart features.</p>
           <ul class="stack-chips"><li>PHP</li><li>MySQL</li></ul>
           <span class="nolink">No public demo</span>
@@ -963,9 +1016,18 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="info">
           <span class="tag"><svg class="ic"><use href="#i-cpu"/></svg>Hardware and IoT</span>
           <h3>PRINTABLES</h3>
-          <span class="project-date">2025</span>
+          <div class="project-meta"><span class="project-date">2025</span><span class="project-status">Hardware project</span><span class="project-role">Team project</span></div>
           <p>Autonomous printing kiosk project for CNSC. Arduino-based system with coin and QR digital payment. Self-service printing with web-based integration.</p>
           <ul class="stack-chips"><li>Arduino</li><li>Kiosk</li><li>Automation</li></ul>
+          <details class="project-details">
+            <summary>View project details</summary>
+            <dl>
+              <dt>Purpose</dt><dd>Provide a self-service printing kiosk for CNSC.</dd>
+              <dt>Hardware</dt><dd>An Arduino-based system connects the kiosk hardware with the printing workflow.</dd>
+              <dt>Payments</dt><dd>Supports coin payments and QR digital payments.</dd>
+              <dt>Integration</dt><dd>Combines hardware automation with web-based integration for self-service printing.</dd>
+            </dl>
+          </details>
           <span class="nolink">Hardware project</span>
         </div>
       </article>
@@ -975,13 +1037,13 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="shot">
           <div class="browser">
             <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>emulat.netlify.app</span></div>
-            <div class="browser-img"><img src="e-mulat.png" loading="lazy" decoding="async" alt="Emulat screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=Emulat'"></div>
+            <div class="browser-img"><img src="e-mulat.webp" loading="lazy" decoding="async" alt="Emulat screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=Emulat'"></div>
           </div>
         </div>
         <div class="info">
           <span class="tag"><svg class="ic"><use href="#i-book"/></svg>Educational platform</span>
           <h3>Emulat</h3>
-          <span class="project-date">Early 2025</span>
+          <div class="project-meta"><span class="project-date">Early 2025</span><span class="project-status">Live demo</span><span class="project-role">Solo project</span></div>
           <p>Educational web platform showcasing the origin and cultural stories behind religious penitence traditions from selected towns in Camarines Norte.</p>
           <ul class="stack-chips"><li>Culture</li><li>Education</li></ul>
           <a class="link-go" href="https://emulat.netlify.app" target="_blank" rel="noopener">View live <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
@@ -1000,7 +1062,7 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="evt-body">
           <span class="tag" style="margin-bottom:16px"><svg class="ic"><use href="#i-smartphone"/></svg>Mobile app</span>
           <h3>E-Vents</h3>
-          <span class="project-date">2024</span>
+          <div class="project-meta"><span class="project-date">2024</span><span class="project-status">Mobile app</span><span class="project-role">Solo project</span></div>
           <p>Digital event ticketing system using QR codes. Enables fast entrance verification, reduces paper ticket usage, and improves security and event check-in efficiency.</p>
           <ul class="checks">
             <li><svg class="ic"><use href="#i-check-circle"/></svg>QR Code Integration</li>
@@ -1015,13 +1077,13 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="shot">
           <div class="browser">
             <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>zgpharmacy.netlify.app</span></div>
-            <div class="browser-img"><img src="zgpharmacy.png" loading="lazy" decoding="async" alt="ZG Pharmacy screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=ZG+Pharmacy'"></div>
+            <div class="browser-img"><img src="zgpharmacy.webp" loading="lazy" decoding="async" alt="ZG Pharmacy screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=ZG+Pharmacy'"></div>
           </div>
         </div>
         <div class="info">
           <span class="tag"><svg class="ic"><use href="#i-globe"/></svg>Web system</span>
           <h3>ZG Pharmacy</h3>
-          <span class="project-date">2022</span>
+          <div class="project-meta"><span class="project-date">2022</span><span class="project-status">Live demo</span><span class="project-role">Solo project</span></div>
           <p>Web based pharmacy system deployed online. A comprehensive digital presence designed to be user-friendly.</p>
           <ul class="stack-chips"><li>Web</li><li>Deployed</li></ul>
           <a class="link-go" href="https://zgpharmacy.netlify.app" target="_blank" rel="noopener">View live <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
@@ -1194,7 +1256,7 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
     const spy = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
     }, { rootMargin: '-40% 0px -55% 0px' });
-    ['hero', 'about', 'skills', 'projects', 'contact'].forEach(id => { const el = document.getElementById(id); el && spy.observe(el); });
+    ['hero', 'about', 'experience', 'skills', 'projects', 'contact'].forEach(id => { const el = document.getElementById(id); el && spy.observe(el); });
   }
   addEventListener('resize', moveIndicator);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(moveIndicator);
@@ -1339,6 +1401,7 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
   const open = url => () => window.open(url, '_blank', 'noopener');
   const actions = [
     { label: 'Go to About',    hint: 'Section', icon: 'arrow-right', run: goTo('about') },
+    { label: 'Go to Experience', hint: 'Section', icon: 'arrow-right', run: goTo('experience') },
     { label: 'Go to Skills',   hint: 'Section', icon: 'arrow-right', run: goTo('skills') },
     { label: 'Go to Works',    hint: 'Section', icon: 'arrow-right', run: goTo('projects'), kw: 'projects' },
     { label: 'Go to Contact',  hint: 'Section', icon: 'arrow-right', run: goTo('contact') },
@@ -1503,9 +1566,9 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
       const d = document.createElement('div');
       d.innerHTML = `&gt; ${l[0]}` + (l[1] ? ` <b>${l[1]}</b>` : '');
       log.appendChild(d);
-    }, 150 + i * 320));
+    }, 80 + i * 200));
     requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = '100%'; }));
-    setTimeout(finish, 1700);
+    setTimeout(finish, 1000);
     ['pointerdown', 'keydown'].forEach(ev => addEventListener(ev, finish, { once: true }));
   })();
   setTimeout(() => { html.classList.add('ready'); }, 4500);   // safety net
