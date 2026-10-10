@@ -492,6 +492,8 @@ html.dark .theme-btn .i-moon { display: none; }
 .tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: .8rem; font-weight: 700; color: var(--acc); background: rgba(var(--acc-rgb), .1); border: 1px solid rgba(var(--acc-rgb), .28); }
 .tag .ic { width: 15px; height: 15px; }
 .info h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.8vw, 2.1rem); letter-spacing: -.03em; line-height: 1.15; }
+.project-date { display: block; font: 600 .82rem var(--font-mono); color: var(--muted); }
+.evt-body .project-date { margin-bottom: 16px; }
 .info p { color: var(--muted); max-width: 52ch; }
 .stack-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .stack-chips li { padding: 4px 13px; border-radius: 999px; font-size: .78rem; font-weight: 700; color: var(--acc); background: rgba(var(--acc-rgb), .09); border: 1px solid rgba(var(--acc-rgb), .22); }
@@ -925,31 +927,15 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="info">
           <span class="tag"><svg class="ic"><use href="#i-cart"/></svg>E-commerce</span>
           <h3>Likha UCN Market Hub</h3>
+          <span class="project-date">2026</span>
           <p>A complete marketplace platform featuring Buyer, Seller, and Admin views. Built with a React and Tailwind frontend, and a Node.js and Express backend. Integrates Neon PostgreSQL for database management, JWT for authentication, and PayMongo API for secure checkout flows.</p>
           <ul class="stack-chips"><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>PayMongo</li></ul>
           <a class="link-go" href="https://ucnmarkethub.netlify.app/" target="_blank" rel="noopener">View live <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
         </div>
       </article>
 
-      <!-- Emulat -->
-      <article class="proj flip spot" style="--i:1" data-reveal="up">
-        <div class="shot">
-          <div class="browser">
-            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>emulat.netlify.app</span></div>
-            <div class="browser-img"><img src="e-mulat.png" loading="lazy" decoding="async" alt="Emulat screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=Emulat'"></div>
-          </div>
-        </div>
-        <div class="info">
-          <span class="tag"><svg class="ic"><use href="#i-book"/></svg>Educational platform</span>
-          <h3>Emulat</h3>
-          <p>Educational web platform showcasing the origin and cultural stories behind religious penitence traditions from selected towns in Camarines Norte.</p>
-          <ul class="stack-chips"><li>Culture</li><li>Education</li></ul>
-          <a class="link-go" href="https://emulat.netlify.app" target="_blank" rel="noopener">View live <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
-        </div>
-      </article>
-
       <!-- CLCB Shop -->
-      <article class="proj spot" style="--i:2" data-reveal="up">
+      <article class="proj flip spot" style="--i:1" data-reveal="up">
         <div class="shot">
           <div class="browser">
             <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>clcb-shop</span></div>
@@ -959,31 +945,15 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="info">
           <span class="tag"><svg class="ic"><use href="#i-cart"/></svg>E-commerce</span>
           <h3>CLCB Shop</h3>
+          <span class="project-date">Late 2025</span>
           <p>E-commerce platform for a local business. Built with a custom PHP backend and MySQL database. Includes inventory management, user authentication, and dynamic shopping cart features.</p>
           <ul class="stack-chips"><li>PHP</li><li>MySQL</li></ul>
           <span class="nolink">No public demo</span>
         </div>
       </article>
 
-      <!-- ZG Pharmacy -->
-      <article class="proj flip spot" style="--i:3" data-reveal="up">
-        <div class="shot">
-          <div class="browser">
-            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>zgpharmacy.netlify.app</span></div>
-            <div class="browser-img"><img src="zgpharmacy.png" loading="lazy" decoding="async" alt="ZG Pharmacy screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=ZG+Pharmacy'"></div>
-          </div>
-        </div>
-        <div class="info">
-          <span class="tag"><svg class="ic"><use href="#i-globe"/></svg>Web system</span>
-          <h3>ZG Pharmacy</h3>
-          <p>Web based pharmacy system deployed online. A comprehensive digital presence designed to be user-friendly.</p>
-          <ul class="stack-chips"><li>Web</li><li>Deployed</li></ul>
-          <a class="link-go" href="https://zgpharmacy.netlify.app" target="_blank" rel="noopener">View live <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
-        </div>
-      </article>
-
       <!-- PRINTABLES -->
-      <article class="proj spot" style="--i:4" data-reveal="up">
+      <article class="proj spot" style="--i:2" data-reveal="up">
         <div class="shot">
           <div class="browser">
             <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>printables-kiosk</span></div>
@@ -993,35 +963,72 @@ dialog#palette[open] { animation: popin .3s var(--ease); }
         <div class="info">
           <span class="tag"><svg class="ic"><use href="#i-cpu"/></svg>Hardware and IoT</span>
           <h3>PRINTABLES</h3>
+          <span class="project-date">2025</span>
           <p>Autonomous printing kiosk project for CNSC. Arduino-based system with coin and QR digital payment. Self-service printing with web-based integration.</p>
           <ul class="stack-chips"><li>Arduino</li><li>Kiosk</li><li>Automation</li></ul>
           <span class="nolink">Hardware project</span>
         </div>
       </article>
 
-    </div>
-
-    <h3 class="sub-title">Mobile &amp; systems</h3>
-
-    <article class="events tile panel spot" data-reveal="up">
-      <div class="phone-stage">
-        <div class="phone">
-          <div class="phone-screen">
-            <img src="e-vents.jpg" loading="lazy" decoding="async" alt="E-Vents app screen" onerror="this.onerror=null;this.src='https://placehold.co/400x800/1e293b/7DD3FC?text=E-Vents'">
+      <!-- Emulat -->
+      <article class="proj flip spot" style="--i:3" data-reveal="up">
+        <div class="shot">
+          <div class="browser">
+            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>emulat.netlify.app</span></div>
+            <div class="browser-img"><img src="e-mulat.png" loading="lazy" decoding="async" alt="Emulat screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=Emulat'"></div>
           </div>
         </div>
-      </div>
-      <div class="evt-body">
-        <span class="tag" style="margin-bottom:16px"><svg class="ic"><use href="#i-smartphone"/></svg>Mobile app</span>
-        <h3>E-Vents</h3>
-        <p>Digital event ticketing system using QR codes. Enables fast entrance verification, reduces paper ticket usage, and improves security and event check-in efficiency.</p>
-        <ul class="checks">
-          <li><svg class="ic"><use href="#i-check-circle"/></svg>QR Code Integration</li>
-          <li><svg class="ic"><use href="#i-check-circle"/></svg>Fast Check-in</li>
-          <li><svg class="ic"><use href="#i-check-circle"/></svg>Paperless Solution</li>
-        </ul>
-      </div>
-    </article>
+        <div class="info">
+          <span class="tag"><svg class="ic"><use href="#i-book"/></svg>Educational platform</span>
+          <h3>Emulat</h3>
+          <span class="project-date">Early 2025</span>
+          <p>Educational web platform showcasing the origin and cultural stories behind religious penitence traditions from selected towns in Camarines Norte.</p>
+          <ul class="stack-chips"><li>Culture</li><li>Education</li></ul>
+          <a class="link-go" href="https://emulat.netlify.app" target="_blank" rel="noopener">View live <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+      <!-- E-Vents -->
+      <article class="events tile panel spot" data-reveal="up">
+        <div class="phone-stage">
+          <div class="phone">
+            <div class="phone-screen">
+              <img src="e-vents.jpg" loading="lazy" decoding="async" alt="E-Vents app screen" onerror="this.onerror=null;this.src='https://placehold.co/400x800/1e293b/7DD3FC?text=E-Vents'">
+            </div>
+          </div>
+        </div>
+        <div class="evt-body">
+          <span class="tag" style="margin-bottom:16px"><svg class="ic"><use href="#i-smartphone"/></svg>Mobile app</span>
+          <h3>E-Vents</h3>
+          <span class="project-date">2024</span>
+          <p>Digital event ticketing system using QR codes. Enables fast entrance verification, reduces paper ticket usage, and improves security and event check-in efficiency.</p>
+          <ul class="checks">
+            <li><svg class="ic"><use href="#i-check-circle"/></svg>QR Code Integration</li>
+            <li><svg class="ic"><use href="#i-check-circle"/></svg>Fast Check-in</li>
+            <li><svg class="ic"><use href="#i-check-circle"/></svg>Paperless Solution</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- ZG Pharmacy -->
+      <article class="proj flip spot" style="--i:5" data-reveal="up">
+        <div class="shot">
+          <div class="browser">
+            <div class="browser-bar"><span class="dots"><i></i><i></i><i></i></span><span>zgpharmacy.netlify.app</span></div>
+            <div class="browser-img"><img src="zgpharmacy.png" loading="lazy" decoding="async" alt="ZG Pharmacy screenshot" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/7DD3FC?text=ZG+Pharmacy'"></div>
+          </div>
+        </div>
+        <div class="info">
+          <span class="tag"><svg class="ic"><use href="#i-globe"/></svg>Web system</span>
+          <h3>ZG Pharmacy</h3>
+          <span class="project-date">2022</span>
+          <p>Web based pharmacy system deployed online. A comprehensive digital presence designed to be user-friendly.</p>
+          <ul class="stack-chips"><li>Web</li><li>Deployed</li></ul>
+          <a class="link-go" href="https://zgpharmacy.netlify.app" target="_blank" rel="noopener">View live <svg class="ic"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
